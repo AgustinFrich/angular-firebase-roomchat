@@ -1,0 +1,108 @@
+<div class="App">
+  <div class="App-Row">
+    <div class="App-Col-1">
+      <!--PROFILE-->
+      <button
+        style="position: absolute; top: 20px; left: 20px"
+        (click)="salir()"
+        class="btn btn-danger"
+      >
+        Salir
+      </button>
+      <div>
+        <h2>Profile</h2>
+        <div class="Profile">
+          <img class="Profile-Image" [src]="authS.user!.profileImg" alt="" />
+          <div class="Profile-Name">{{ authS.user!.name }}</div>
+        </div>
+        <hr />
+      </div>
+      <!--SEARCHBAR
+        <div>SeatchBar</div>
+      -->
+      <!--CHATLIST-->
+      <div>
+        <br />
+        <h2>USERS</h2>
+        <div class="ChatList-Container">
+          <div *ngFor="let u of userList">
+            <div
+              class="ChatList-User"
+              style="cursor: pointer"
+              (click)="selectOtherUser(u)"
+            >
+              <label style="cursor: pointer">{{ u.name }}</label>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <!--CHAT-->
+    <div class="App-Col-2" *ngIf="otherUser !== null">
+      <!--CHAT HEADER-->
+      <div>
+        <div class="Profile">
+          <img class="Profile-Image" [src]="otherUser.profileImg" alt="" />
+          <div class="Profile-Name">{{ otherUser.name }}</div>
+          <svg
+            height="16"
+            width="16"
+            [ngClass]="
+              otherUser.connected ? 'Profile-Online' : 'Profile-Offline'
+            "
+          >
+            <circle cx="8" cy="8" r="4" />
+          </svg>
+          <div *ngIf="!otherUser.connected">
+            <p class="Profile-LastConnected">
+              Last time online
+              <br />
+              {{ lastTime(otherUser.updatedAt) }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--CHAT CHAT-->
+      <div class="center">
+        <hr />
+        <div *ngFor="let m of messages">
+          <div [ngClass]="isMine(m) ? 'myMessage' : 'otherMessage'">
+            <div *ngIf="isMine(m); else elseMsg">
+              <svg height="8" width="8" class="mySvg">
+                <path d="M0 8 L0 0 L8 0 Z" />
+              </svg>
+            </div>
+            <ng-template #elseMsg>
+              <svg height="8" width="8" class="otherSvg">
+                <path d="M8 8 L0 0 L8 0 Z" />
+              </svg>
+            </ng-template>
+            <p class="message">{{ m.message }}</p>
+          </div>
+        </div>
+
+        <!--CHAT SENDER-->
+        <div>
+          <br />
+          <!--value message-->
+          <input
+            [(ngModel)]="message"
+            style="width: 70%"
+            class="Sender-Input"
+          />
+          <button
+            (click)="sendMessage()"
+            class="btn btn-info"
+            style="width: 20%"
+          >
+            SEND
+          </button>
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

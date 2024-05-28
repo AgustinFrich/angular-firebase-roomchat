@@ -1,0 +1,104 @@
+<div class="h-100">
+  <div class="d-flex justify-content-center border-0 top">
+    <div class="SignUp">
+      <div class="card-group SignUp-FirstCard">
+        <div class="card SignUp-FirstCard">
+          <img
+            class="card-img SignUp-BigImage"
+            src="../../../assets/SignUpImage.jpg"
+            alt="Card image"
+          />
+          <div class="card-img-overlay SignUp-image">
+            <div class="card-title SignUp-imageTitle" as="h1">Sign Up</div>
+
+            <div class="card-text">Let's get started.</div>
+            <hr />
+          </div>
+        </div>
+        <div class="card">
+          <div class="SignUp-Form">
+            <div class="SignUp-FormGroup form-group">
+              <div class="form-label">Username</div>
+              <input
+                class="SignUp-EraseBorder form-control"
+                type="text"
+                name="username"
+                placeholder="Examle123"
+                value="{{ username }}"
+                [(ngModel)]="username"
+              />
+            </div>
+            <div class="SignUp-FormGroup form-group">
+              <div class="form-label">Mail</div>
+              <input
+                class="SignUp-EraseBorder form-control"
+                type="text"
+                name="mail"
+                placeholder="Examle123@mail.com"
+                value="{{ mail }}"
+                [(ngModel)]="mail"
+              />
+            </div>
+            <div class="SignUp-FormGroup form-group">
+              <div class="form-label">Password</div>
+              <input
+                class="SignUp-EraseBorder form-control"
+                name="password"
+                type="password"
+                placeholder="• • • • • • • •"
+                value="{{ password }}"
+                [(ngModel)]="password"
+              />
+            </div>
+            <!-- 
+              <UploadImage setProfileImage={setProfileImage} />
+            -->
+            <div class="form-group" style="height: 140px">
+              <img
+                style="
+                  height: 80px;
+                  width: 80px;
+                  border-radius: 50%;
+                  margin-bottom: 10px;
+                  margin-left: calc(50% - 40px);
+                  margin-right: calc(50% - 40px);
+                "
+                [src]="src"
+                alt=""
+              />
+              <br />
+              <input
+                class="form-control"
+                type="file"
+                name="profileImage"
+                id="profileImageInput"
+                accept="image/*"
+                (change)="onFileSelected($event)"
+              />
+              <br />
+            </div>
+
+            <div *ngIf="errorMsg">
+              <p style="color: #ff0000">{{ errorMsg }}</p>
+            </div>
+            <Button class="SignUp-Button" type="submit" (click)="signUp()">
+              Sign Up
+            </Button>
+            <div class="SignUp-SignIn">
+              <p class="change">
+                Already have an account?
+
+                <a
+                  style="color: blue; cursor: pointer"
+                  [routerLink]="['/login']"
+                >
+                  Log-In
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

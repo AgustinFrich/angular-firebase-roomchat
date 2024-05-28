@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "friadenrich-chat": {
+      "hosting": {
+        "chat": [
+          "friadenrich-chat"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "friadenrich-chat"
+  }
+}

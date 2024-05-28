@@ -1,0 +1,179 @@
+//APP
+@media (min-width: 576px) {
+  .App {
+    width: 100%;
+    margin: none;
+    padding: 5px;
+    display: table;
+    text-align: center;
+  }
+
+  .App-Row {
+    width: 100%;
+    padding: 5px;
+    display: table-row;
+  }
+  .App-Col-1 {
+    padding: 5px;
+
+    display: table-cell;
+    width: 40%;
+  }
+
+  .App-Col-2 {
+    padding: 5px;
+
+    display: table-cell;
+    width: 60%;
+  }
+}
+
+@media (max-width: 575px) {
+  .App {
+    text-align: center;
+    display: block;
+  }
+
+  .App-Row {
+    width: 100%;
+    display: block;
+  }
+  .App-Col-1 {
+    display: block;
+  }
+
+  .App-Col-2 {
+    display: block;
+  }
+}
+
+//PROFILE
+.Profile {
+  display: inline-flex;
+  align-items: center;
+  margin-left: calc(50% - 200px);
+  margin-right: calc(50% - 200px);
+}
+
+.Profile-Image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.Profile-Name {
+  margin-left: 10px;
+}
+.Profile-Online,
+.Profile-Offline {
+  margin-left: 20px;
+  transform: translateY(2px);
+}
+
+.Profile-Online {
+  fill: #33aa33;
+}
+
+.Profile-Offline {
+  fill: #777777;
+}
+
+.Profile-LastConnected {
+  margin-left: 20px;
+  margin-top: 12px;
+  font-size: 10px;
+}
+
+//CHATLIST
+.ChatList-User {
+  width: 200px;
+  border: #888888 solid 2px;
+  border-radius: 10px;
+}
+
+.ChatList-Container {
+  margin-left: calc(50% - 100px);
+  margin-right: calc(50% - 100px);
+}
+
+// CHAT CHAT
+.myMessage {
+  text-align: right;
+  background-color: #befcf9;
+  padding-right: 10px;
+  border-radius: 10px 0px 10px 10px;
+}
+
+.otherMessage {
+  text-align: left;
+  background-color: rgba(230, 230, 230, 1);
+  padding-left: 10px;
+  border-radius: 0px 10px 10px 10px;
+}
+
+.message,
+.messageName {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.message {
+  font-size: large;
+  padding: 10px 0px;
+}
+
+@media (min-width: 0px) {
+  .center {
+    margin-left: calc(50% - 150px);
+    margin-right: calc(50% - 150px);
+  }
+}
+@media (min-width: 750px) {
+  .center {
+    margin-left: calc(50% - 200px);
+    margin-right: calc(50% - 200px);
+  }
+}
+@media (min-width: 900px) {
+  .center {
+    margin-left: calc(50% - 250px);
+    margin-right: calc(50% - 250px);
+  }
+}
+@media (min-width: 1100px) {
+  .center {
+    margin-left: calc(50% - 300px);
+    margin-right: calc(50% - 300px);
+  }
+}
+@media (min-width: 1250px) {
+  .center {
+    margin-left: calc(50% - 350px);
+    margin-right: calc(50% - 350px);
+  }
+}
+.mySvg {
+  fill: #befcf9;
+  position: absolute;
+  transform: translateX(8px);
+}
+
+.otherSvg {
+  fill: rgba(230, 230, 230, 1);
+  position: absolute;
+  transform: translateX(-16px);
+}
+
+//SENDER
+.Sender-Input:focus {
+  outline: none;
+}
+.Sender-Input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #333333;
+  margin-right: 5px;
+  outline: none;
+}

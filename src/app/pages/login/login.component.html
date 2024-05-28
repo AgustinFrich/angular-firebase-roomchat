@@ -1,0 +1,79 @@
+<div class="h-100">
+  <div class="d-flex justify-content-center border-0 top">
+    <div class="SignUp">
+      <div class="card-group SignUp-FirstCard">
+        <div class="card SignUp-FirstCard">
+          <img
+            class="card-img SignUp-BigImage"
+            src="../../../assets/LogInImage.jpg"
+            alt="Card image"
+          />
+          <div class="card-img-overlay SignUp-image">
+            <div class="card-title SignUp-imageTitle" as="h1">Log In</div>
+            <div class="card-text">Welcome Again.</div>
+            <hr />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="SignUp-Form form">
+            <div class="SignUp-FormGroup form-group">
+              <div class="form-label">Mail</div>
+              <input
+                class="SignUp-EraseBorder form-control"
+                type="text"
+                name="mail"
+                placeholder="Examle123@mail.com"
+                value="{{ mail }}"
+                [(ngModel)]="mail"
+              />
+            </div>
+            <div class="SignUp-FormGroup form-group">
+              <div class="form-label">Password</div>
+              <input
+                class="SignUp-EraseBorder form-control"
+                name="password"
+                type="password"
+                placeholder="• • • • • • • •"
+                value="{{ password }}"
+                [(ngModel)]="password"
+              />
+            </div>
+            <div style="height: 231px"></div>
+            <div *ngIf="errorMsg">
+              <p style="color: #ff0000">{{ errorMsg }}</p>
+            </div>
+            <Button class="SignUp-Button" type="submit" (click)="login()">
+              Log In
+            </Button>
+
+            <div class="SignUp-SignIn">
+              <p class="change">
+                Doesn't have an account?
+
+                <a
+                  style="color: blue; cursor: pointer"
+                  [routerLink]="['/signup']"
+                >
+                  Sign-Up
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+      <div class="mt-2 d-flex">
+        <button class="btn btn-dark me-2" (click)="rapido1()">
+          Quick Access 1
+        </button>
+        <button class="btn btn-dark me-2" (click)="rapido2()">
+          Quick Access 2
+        </button>
+        <button class="btn btn-dark me-2" (click)="rapido3()">
+          Quick Access 3
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
